@@ -1,7 +1,9 @@
 {
   "name": "sphinx",
   "scripts": {
-    "test": "./node_modules/.bin/karma start --browsers Firefox --single-run"
+    "test": "./node_modules/.bin/karma start --browsers Firefox --single-run",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,9 @@
     "karma-chrome-launcher": "^3.0.0",
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "^2.0.0"
+  },
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
   }
 }
